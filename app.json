@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "briefcase-mobile",
-    "slug": "briefcase-mobile",
+    "slug": "briefcase",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -37,6 +37,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c9a1df36-da64-402d-9876-36e3e2965271"
+      }
+    },
+    "owner": "theredled"
   }
 }
