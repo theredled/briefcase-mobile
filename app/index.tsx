@@ -71,7 +71,7 @@ export default function Index() {
     useEffect(() => {
         const fetchDocuments =  async () => {
             try {
-                const resp = await fetch('http://192.168.1.23:8000/api/documents');
+                const resp = await fetch(apiUrl + '/documents');
                 const json = await resp.json();
                 const documents = json.map((doc: Document) => {
                     if (doc.fa_icon_name === 'file-alt')
