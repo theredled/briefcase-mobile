@@ -54,6 +54,14 @@ export default function Index() {
         closeMenu();
     }
 
+    const addLinkToClipboard = async(url: string) => {
+        const currentClipboard = await Clipboard.getStringAsync();
+        const newClipboard = currentClipboard + "\n" + url;
+        await Clipboard.setStringAsync(newClipboard);
+        alert('Lien ajouté !');
+        closeMenu();
+    }
+
     const openLink = async(url: string) => {
         await Linking.openURL(url);
         closeMenu();
@@ -127,8 +135,9 @@ export default function Index() {
                                     anchor={menuPosition}
                                     statusBarHeight={0}
                                 >
-                                    <Menu.Item onPress={() => copyLink(currentDoc.url)} title="Copier le lien"/>
                                     <Menu.Item onPress={() => openLink(currentDoc.url)} title="Ouvrir"/>
+                                    <Menu.Item onPress={() => copyLink(currentDoc.url)} title="Copier le lien"/>
+                                    <Menu.Item onPress={() => addLinkToClipboard(currentDoc.url)} title="Ajouter au presse-papier"/>
                                 </Menu>
                             }
                         </ScrollView>
